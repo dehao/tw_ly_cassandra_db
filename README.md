@@ -16,9 +16,9 @@ tw_ly_cassandra_db
 8. ./do_all_admin.sh
 
 9. get sample doc from http://lci.ly.gov.tw/LyLCEW/communique1/work/101/74/LCIDC01_1017401_00002.doc as 101-74-01-00002.doc
-10. use ./get_txt.sh to generate .txt file
+10. use ./get_txt.sh to generate .txt file (or your own method to generate 101-74-01-00002.txt)
 
-11. use ./get_cassandra.sh to put the data into cassandra. (takes about 30 mins (11-gram Chinese characters))
+11. use ./get_cassandra.sh to put the data into cassandra. (takes about 30 mins (11-gram Chinese characters), around 360 M)
 
 12. php GetSearchText.php "院會" "" and you will get some debug info.
 
