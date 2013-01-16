@@ -1,0 +1,3 @@
+[submodule "src/php-common/phpcassa"]
+	path = src/php-common/phpcassa
+	url = https://github.com/thobbs/phpcassa
