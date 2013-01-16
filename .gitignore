@@ -21,7 +21,6 @@ log.*
 /sikuli
 /parse
 /twlyparser-master
-/doc
 /cassandra
 /cassandra-core
 /ajax-core-dynamic
