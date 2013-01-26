@@ -24,3 +24,4 @@ log.*
 /cassandra
 /cassandra-core
 /ajax-core-dynamic
+/doc
