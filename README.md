@@ -65,3 +65,16 @@ means "院會" appears at row 519 (0 as row 1) in the file "101-01-01-00002.txt"
 
 13. cd doc-gen. ./do_dynamic_all.sh to gen sdk docs by doxygen
 
+## To get sample output:
+
+#### sample.GetSearchIndex.txt
+php GetSearchIndex.php "" ""
+
+#### sample.GetSearchIndex.by_speaker.txt
+php GetSearchIndex.php "" "主席"
+
+#### sample.GetSearchText.txt
+php GetSearchIndex.php "乩" ""
+
+#### sample.GetSearchText.by_speaker.txt
+php GetSearchIndex.php "馬" "主席"
