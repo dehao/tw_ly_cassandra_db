@@ -1,6 +1,5 @@
 log.*
 *.doc
-*.txt
 *.pdf
 /data
 /dev-cassandra

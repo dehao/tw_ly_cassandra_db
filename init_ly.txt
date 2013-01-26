@@ -1,0 +1,2 @@
+create keyspace ly;
+update keyspace ly with strategy_options={datacenter1:3};
