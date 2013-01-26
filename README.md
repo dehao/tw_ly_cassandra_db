@@ -47,7 +47,7 @@ Cassandra 是個 distributed DB system.
 8. ./do_all_admin.sh
 
 9. get sample doc from http://lci.ly.gov.tw/LyLCEW/communique1/work/101/01/LCIDC01_1010101_00002.doc as data/101-01-01-00002.doc
-10. use ./get_txt.sh to generate .txt file (or your own method to generate data/101-74-01-00002.txt)
+10. use ./get_txt.sh to generate .txt file (or your own method to generate data/101-01-01-00002.txt)
 
 11. use ./get_cassandra.sh to put the data into cassandra. (takes about 2 mins (11-gram Chinese characters), around 300 M)
 
