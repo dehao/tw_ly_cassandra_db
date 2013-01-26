@@ -1,0 +1,51 @@
+ERROR_API1_CF_OFFSET=300
+
+#my home
+MY_HOME_DIR="/Users/chhsiao"
+
+#cassandra
+CASSANDRA_BIN_DIR="${MY_HOME_DIR}/apache-cassandra-1.1.7/bin"
+
+#NOSQL 的 host
+HOST="localhost"
+KEYSPACE="ly"
+
+#NOSQLROOT_DIR: 要使用這個 template 的 dir (不一定是 user/NoSQLRoot 的 dir)
+NOSQLROOT_DIR="/Volumes/chhsiao_movie_analysis/tw_ly"
+
+#HOME_HTTP: 會連到 ajax/php 的 server
+HOME_HTTP="http://localhost/web"
+
+#SERVERS: 會連到 cassandra 的 server
+SERVERS="\"localhost:9160\""
+
+#CONSISTENCY_LEVEL:
+READ_CONSISTENCY_LEVEL="ConsistencyLevel::ONE"
+WRITE_CONSISTENCY_LEVEL="ConsistencyLevel::ONE"
+
+#LOG_DIR
+LOG_DIR="${MY_HOME_DIR}/log"
+
+#### AUTO_GEN ####
+#CASSANDRA
+CASSANDRA_COMMAND="${CASSANDRA_BIN_DIR}/cassandra"
+CASSANDRA_CLIENT_COMMAND="${CASSANDRA_BIN_DIR}/cassandra-cli"
+CASSANDRA_NODETOOL_COMMAND="${CASSANDRA_BIN_DIR}/nodetool"
+
+#REGEX
+MY_HOME_DIR_REGEX=`echo "${MY_HOME_DIR}"|sed 's/\//\\\\\//g'`
+
+#HOME_DIR: 要使用這個 template 的 dir (不一定是 user/NoSQLRoot 的 dir)
+NOSQLROOT_DIR_REGEX=`echo "${NOSQLROOT_DIR}"|sed 's/\//\\\\\//g'`
+
+#HOME_HTTP: 會連到 ajax/php 的 server
+HOME_HTTP_REGEX=`echo "${HOME_HTTP}"|sed 's/\//\\\\\//g'`
+
+#LOG_DIR_REGEX
+LOG_DIR_REGEX=`echo "${LOG_DIR}"|sed 's/\//\\\\\//g'`
+
+#HOME_DIR: 要使用這個 template 的 dir (不一定是 user/NoSQLRoot 的 dir)
+HOME_DIR2=${HOME_DIR}
+
+#KEYSPACE_NAME: cassandra 的 keyspace
+KEYSPACE_NAME="\"${KEYSPACE}\""

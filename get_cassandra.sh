@@ -3,7 +3,7 @@
 current_dir=`pwd`
 IMPORT_DIR="${current_dir}/src/import/Text/ImportTextToTextBasic"
 
-for j in `ls 101*.txt`
+for j in `ls data/101*.txt`
 do
     if [ -f "${j}.bak" ]
         then

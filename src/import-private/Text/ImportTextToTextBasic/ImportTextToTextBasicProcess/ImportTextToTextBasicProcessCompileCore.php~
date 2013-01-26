@@ -1,0 +1,16 @@
+<?php include_once('Common/PhpCommonConstants.php'); ?>
+<?php if($NoSQL['DEBUG']) include_once('Common/DebugArray.php'); ?>
+<?php if($NoSQL['DEBUG']) include_once('Common/EchoDebug.php'); ?>
+<?php ?>
+<?php
+/**********
+ *
+ */
+
+function ImportTextToTextBasicProcessCompileCore() {
+  global $NoSQL;
+  $DEBUG_FILENAME = '#' . __FILE__ . "@" . __FUNCTION__;
+
+  return;
+}
+?>

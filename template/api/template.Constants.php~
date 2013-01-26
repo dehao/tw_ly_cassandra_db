@@ -1,0 +1,55 @@
+<?php
+use cassandra\ConsistencyLevel;
+/**********
+ * Constants
+ * @memo php 基本 api 的共同 constants
+ * 
+ * @param
+ *
+ * @return GLOBALS['_debug']            debug info
+ * @return GLOBALS['ERROR_PARAMS']       當 CheckParams 失敗時的 error code
+ * @return GLOBALS['ERROR_CFS']          當 CheckCFS 失敗時的 error code
+ * @return GLOBALS['ERROR_CF1']          當 CheckCFS 失敗時的 error code
+ * @return GLOBALS['ERROR_CF2']          當 CheckCFS 失敗時的 error code
+ * @return GLOBALS['SERVERS']
+ * @return GLOBALS['KEYSPACE_NAME']
+ * @return GLOBALS['INT_MAX']
+ * @return GLOBALS['RAND_MAX']
+ * 
+ * @return GLOBALS['SEP']
+ * @return GLOBALS['SEP2']
+ * @return GLOBALS['SEP3']
+ * @return GLOBALS['SEP_ARTIST']
+ * @return GLOBALS['SEP_AUTO_COMPLETE']
+ *
+ * @return LENGTH_GET_DATA              GetData/GetIndexedData 的 default 的 column 數目
+ * @return GLOBALS['LENGTH_PER_CHAR']
+ * @return GLOBALS['LENGTH_SHORT_DESCRIPTION']
+ * @return GLOBALS['LENGTH_NEW_WALL_POST']
+ * @return GLOBALS['LENGTH_REPLY']
+ * @return GLOBALS['MAX_LENGTH_AUTO_COMPLETE_KEY']           
+ *                                      auto_complete_key 的最長長度的位數 
+ * @return GLOBALS['MAX_LENGTH_AUTO_COMPLETE_STRLEN'] 
+ *                                      auto_complete 的完整的字/sentence 所考慮的最長的長度 
+ *                                      因為我們要以字的長度排序. 字的長度的位元數要固定.
+ *                                      (MAX_LENGTH_AUTO_COMPLETE_STRLEN = 6: 0-999999)
+ * @return GLOBALS['MAX_LENGTH_AUTO_COMPLETE'] 
+ *                                      每個 key 的每個 length 的最大長度.
+ * 
+ * @return GLOBALS['INIT_SCORE_SONG']
+ * @return GLOBALS['INIT_SCORE_WALL_POST']
+ * @return GLOBALS['FORMAT_TIME_SEC']
+ * @return GLOBALS['PRECISION_TIME_USEC']
+ * @return GLOBALS['TAG_TYPE_PORTFOLIO']
+ *
+ * @return GLOBALS['CASSANDRA_CFS']
+ * @return GLOBALS['CASSANDRA_CONNECTION_POOL']
+ *
+ * @TODO
+ */
+
+$NoSQL['SERVERS'] = array([SERVERS]);
+$NoSQL['KEYSPACE_NAME'] = [KEYSPACE_NAME];
+$NoSQL['READ_CONSISTENCY_LEVEL'] = [READ_CONSISTENCY_LEVEL];
+$NoSQL['WRITE_CONSISTENCY_LEVEL'] = [WRITE_CONSISTENCY_LEVEL];
+?>

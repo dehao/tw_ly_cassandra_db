@@ -1,7 +1,7 @@
 var NAVTREE =
 [
   [ "dynamic", "index.html", [
-    [ "Todo List", "dd/da0/todo.html", null ],
+    [ "Todo List", "todo.html", null ],
     [ "Files", null, [
       [ "File List", "files.html", "files" ],
       [ "Globals", "globals.html", [

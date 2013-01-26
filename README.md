@@ -1,6 +1,37 @@
 tw_ly_cassandra_db
 ==================
 
+## Purpose
+
+這個系統希望能夠提供關於臺灣立法院的議事記錄的簡單而且 extensible 的 query system.
+
+透過這個系統. 希望能夠知道以下資訊:
+1. 我們可以 query 哪些文字.
+2. 對於每個文字. 知道總共出現多少次.
+3. 對於每個文字. 知道在哪些公報的哪些地方出現.
+
+有著這些資訊. 將可以對所有文字做跨時間的統計. 
+透過計算 tf-idf. 或是其他的 index.
+希望能夠知道立法院(或是每個委員)在不同的時間所關心的不同議題.
+
+這些資訊可能可以透過 grep 得知.
+這個系統是希望能夠快速提供 grep 完的結果. 讓大家不用每次在 access 這些資訊時. 都需要花時間重新 grep.
+
+目前的官方 query 系統 (http://lci.ly.gov.tw)
+有著以下的限制:
+1. 最多只能查到 300 筆.
+2. 似乎沒有容易的方式可以提供給大家做更進一步的使用 (分析或是統計或是其他用途).
+
+Cassandra 是個 distributed DB system.
+建立 DB 方式可以是讓大家各自花 15 min - 20 min 對於某一個 doc 建立那部分的 db 
+(每份 doc 大約會是 300-400 M 的 db). 然後丟到 dropbox 上.
+然後運作時把所有的 db 抓下來 sync. 
+
+這個系統的目的是希望能夠提供 DB 的 data.
+除了讓大家各自 build up 運作以外.
+在找到適當的運作方式以後. 將會提供 unified DB 讓大家容易 access 完整的 DB.
+
+
 ## Quick Start:
 
 1. git submodule update --init --recursive
