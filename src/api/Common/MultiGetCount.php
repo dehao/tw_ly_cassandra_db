@@ -47,7 +47,7 @@ function MultiGetCount($cf, &$keys, &$cols, $is_reverse = false, $number = LENGT
     }
   */
   
-  Debug("INFO-END", $DEBUG_FILENAME, "result", $result);
+  //Debug("INFO-END", $DEBUG_FILENAME, "result", $result);
 
   return $result;
 }
@@ -71,7 +71,7 @@ function MultiGetCountCore(&$cf, &$keys, &$cols, &$column_slice) {
     return "";
   }
 
-  Debug("INFO-END", __LINE__ . $DEBUG_FILENAME, "result", $result);
+  //Debug("INFO-END", __LINE__ . $DEBUG_FILENAME, "result", $result);
 
   return $result;
 }

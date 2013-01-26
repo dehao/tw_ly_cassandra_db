@@ -42,13 +42,13 @@ function GetSearchTextProcessData(&$data, $dir) {
 function GetSearchTextProcessColStart($start_id) {
   $DEBUG_FILENAME = '#' . __FILE__ . '@' . __FUNCTION__;
 
-  $start_id_ary = split("\.txt_", $start_id);
+  $start_id_ary = preg_split("/\.txt_/smu", $start_id);
   Debug("INFO", __LINE__ . $DEBUG_FILENAME, "start_id_ary", $start_id_ary);
 
   $filename = $start_id_ary[0];
   $line_no = $start_id_ary[1];
 
-  $filename_st = split("-", $filename);
+  $filename_st = explode("-", $filename);
   $format = $GLOBALS["DIGIT_FORMAT"] . "-" . $GLOBALS["DIGIT_FORMAT"] . "-" . $GLOBALS["DIGIT_FORMAT"] . "-" . $GLOBALS["DIGIT_FORMAT"] . "-" . $GLOBALS["DIGIT_FORMAT"];
   $score = sprintf($format, $filename_st[0], $filename_st[1], $filename_st[2], $filename_st[3], $line_no);
 
