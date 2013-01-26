@@ -23,19 +23,19 @@ function GetCFS($cf_name, &$params) {
 
   $debug_start_time = GetTimestamp();
 
-  Debug("INFO", $DEBUG_FILENAME, "params", $params);
+  //Debug("INFO", $DEBUG_FILENAME, "params", $params);
   if(!is_array($params)) {
     Debug("ERROR", $DEBUG_FILENAME, "params", $params);
   }
   else {
     if(isset($params['cf']) && $params['cf'] !== null && $params['cf'] !== "") {
-      Debug("INFO", $DEBUG_FILENAME, "with params['cf']. cf_name: $cf_name change to params['cf']", $params['cf']);
+      //Debug("INFO", $DEBUG_FILENAME, "with params['cf']. cf_name: $cf_name change to params['cf']", $params['cf']);
       $cf_name = $params['cf'];
       unset($params['cf']);
     }
   }
 
-  Debug("INFO", $DEBUG_FILENAME, "cf_name", $cf_name);
+  //Debug("INFO", $DEBUG_FILENAME, "cf_name", $cf_name);
 
   $server_ary = GetServers();
   $count_server_ary = count($server_ary);
@@ -44,7 +44,7 @@ function GetCFS($cf_name, &$params) {
     $is_success = false;
     for($j = 0; $j < $count_server_ary; $j++) {
       for($i = 0; $i < $NoSQL["CASSANDRA_SET_TIMES_RETRY"]; $i++) {
-        Debug("INFO", __LINE__ . $DEBUG_FILENAME, "i: $i CASSANDRA_POOL_IDX_SERVER_FAIL", isset($NoSQL["CASSANDRA_POOL_IDX_SERVER_FAIL"]) ? $NoSQL["CASSANDRA_POOL_IDX_SERVER_FAIL"] : "[unset]");
+        //Debug("INFO", __LINE__ . $DEBUG_FILENAME, "i: $i CASSANDRA_POOL_IDX_SERVER_FAIL", isset($NoSQL["CASSANDRA_POOL_IDX_SERVER_FAIL"]) ? $NoSQL["CASSANDRA_POOL_IDX_SERVER_FAIL"] : "[unset]");
         $pool = GetConnectionPool(); 
         if($pool !== null) {
           GetCFSCore($cf_name, $pool);
@@ -78,8 +78,8 @@ function GetCFSCore(&$cf_name, &$pool) {
   global $NoSQL;
   $DEBUG_FILENAME = "#" . __FILE__ . "@" . __FUNCTION__;
 
-  Debug("INFO", __LINE__ . $DEBUG_FILENAME, "", "READ_CONSISTENCY_LEVEL: " . $NoSQL["READ_CONSISTENCY_LEVEL"]);
-  Debug("INFO", __LINE__ . $DEBUG_FILENAME, "", "WRITE_CONSISTENCY_LEVEL: " . $NoSQL["WRITE_CONSISTENCY_LEVEL"]);
+  //Debug("INFO", __LINE__ . $DEBUG_FILENAME, "", "READ_CONSISTENCY_LEVEL: " . $NoSQL["READ_CONSISTENCY_LEVEL"]);
+  //Debug("INFO", __LINE__ . $DEBUG_FILENAME, "", "WRITE_CONSISTENCY_LEVEL: " . $NoSQL["WRITE_CONSISTENCY_LEVEL"]);
   try {
     $NoSQL['CASSANDRA_CFS'][$cf_name] = new ColumnFamily($pool, $cf_name, true, true, $NoSQL['READ_CONSISTENCY_LEVEL'], $NoSQL['WRITE_CONSISTENCY_LEVEL']);
   } catch (cassandra_TimedOutException $e1) {

@@ -28,7 +28,7 @@ function GetCount($cf, $key, &$cols, $is_reverse = false, $number = LENGTH_GET_D
   $result = null;
   
   $column_slice = new ColumnSlice($col_start, $col_end, $NoSQL["INT_MAX"], $is_reverse);
-  Debug("INFO", __LINE__ . $DEBUG_FILENAME, "", "key: $key number: $number col_start: $col_start");
+  //Debug("INFO", __LINE__ . $DEBUG_FILENAME, "", "key: $key number: $number col_start: $col_start");
 
   $the_times_retry = $NoSQL["CASSANDRA_SET_TIMES_RETRY"];
   $result_data_core = "";
@@ -66,8 +66,8 @@ function GetCountCore(&$cf, &$key, &$cols, &$column_slice) {
     Debug("ERROR", __LINE__ . $DEBUG_FILENAME, "key: $key cols", $cols);
     return "";
   }
-
-  Debug("INFO-END", __LINE__ . $DEBUG_FILENAME, "result", $result);
+  
+  //Debug("INFO-END", __LINE__ . $DEBUG_FILENAME, "result", $result);
 
   return $result;
 

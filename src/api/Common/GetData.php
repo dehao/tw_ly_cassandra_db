@@ -31,7 +31,7 @@ function GetData($cf, $key, &$cols, $is_reverse = false, $number = LENGTH_GET_DA
 
   $result = null;
 
-  Debug("INFO", __LINE__ . $DEBUG_FILENAME, "is_reverse: $is_reverse number: $number col_start: $col_start col_end: $col_end key: $key cols", $cols);
+  //Debug("INFO", __LINE__ . $DEBUG_FILENAME, "is_reverse: $is_reverse number: $number col_start: $col_start col_end: $col_end key: $key cols", $cols);
   //EchoDebug();
 
   if($key === "" || $key === null) return null;
@@ -41,10 +41,10 @@ function GetData($cf, $key, &$cols, $is_reverse = false, $number = LENGTH_GET_DA
   $the_times_retry = $NoSQL["CASSANDRA_SET_TIMES_RETRY"];
   $result_data_core = "";
   for($i = 0; $i < $NoSQL["CASSANDRA_SET_TIMES_RETRY"]; $i++) {
-    Debug("INFO", __LINE__ . $DEBUG_FILENAME, "", "to GetDataCore: i: $i key: $key");
+    //Debug("INFO", __LINE__ . $DEBUG_FILENAME, "", "to GetDataCore: i: $i key: $key");
     //EchoDebug();
     $result_data_core = GetDataCore($cf, $key, $cols, $column_slice);
-    Debug("INFO", __LINE__ . $DEBUG_FILENAME, "after GetDataCore: result_data_core", $result_data_core);
+    //Debug("INFO", __LINE__ . $DEBUG_FILENAME, "after GetDataCore: result_data_core", $result_data_core);
     //EchoDebug();
     if(is_array($result_data_core) || $result_data_core !== "") {
       $the_times_retry = $i;
@@ -70,7 +70,7 @@ function GetDataCore(&$cf, &$key, &$cols, &$column_slice) {
     else
       $result = $cf->get($key, $column_slice, null);
 
-    Debug("INFO", __LINE__ . $DEBUG_FILENAME, "key: $key result", $result);
+    //Debug("INFO", __LINE__ . $DEBUG_FILENAME, "key: $key result", $result);
   } catch(NotFoundException $e2) {
     Debug("ERROR-NotFound_ERROR", __LINE__ . $DEBUG_FILENAME, "key: $key cols", $cols);
     return null;

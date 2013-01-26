@@ -20,7 +20,8 @@ tw_ly_cassandra_db
 目前的官方 query 系統 (http://lci.ly.gov.tw)
 有著以下的限制:
 1. 最多只能查到 300 筆.
-2. 似乎沒有容易的方式可以提供給大家做更進一步的使用 (分析或是統計或是其他用途).
+2. context 只有很短的幾句.
+3. 似乎沒有容易的方式可以提供給大家做更進一步的使用 (分析或是統計或是其他用途).
 
 Cassandra 是個 distributed DB system.
 建立 DB 方式可以是讓大家各自花 15 min - 20 min 對於某一個 doc 建立那部分的 db 
@@ -31,14 +32,13 @@ Cassandra 是個 distributed DB system.
 除了讓大家各自 build up 運作以外.
 在找到適當的運作方式以後. 將會提供 unified DB 讓大家容易 access 完整的 DB.
 
-
 ## Quick Start:
 
 1. git submodule update --init --recursive
 
 2. Download the latest version of cassandra 1.1 or 1.2. (http://cassandra.apache.org)
 3. Configure the basic setting of cassandra, and initiate cassandra (It should be ok to directly use the default setting from cassandra.)
-4. init a keyspace called ly in cassandra.
+4. cassandra-cli -f init_ly.txt
 
 5. cd dev. cp Generate.conf.template Generate.conf. Modify corresponding parameters in Generate.conf
 
@@ -46,17 +46,22 @@ Cassandra 是個 distributed DB system.
 7. ./all_gen_do_all.sh
 8. ./do_all_admin.sh
 
-9. get sample doc from http://lci.ly.gov.tw/LyLCEW/communique1/work/101/74/LCIDC01_1017401_00002.doc as 101-74-01-00002.doc
-10. use ./get_txt.sh to generate .txt file (or your own method to generate 101-74-01-00002.txt)
+9. get sample doc from http://lci.ly.gov.tw/LyLCEW/communique1/work/101/01/LCIDC01_1010101_00002.doc as data/101-01-01-00002.doc
+10. use ./get_txt.sh to generate .txt file (or your own method to generate data/101-74-01-00002.txt)
 
-11. use ./get_cassandra.sh to put the data into cassandra. (takes about 30 mins (11-gram Chinese characters), around 360 M)
+11. use ./get_cassandra.sh to put the data into cassandra. (takes about 2 mins (11-gram Chinese characters), around 300 M)
 
-12. php GetSearchText.php "院會" "" and you will get some debug info.
+12. php GetSearchText.php "院會" "" and you will get the count and the corresponding file/line/context
 
-["0101-0074-0001-0002-0685","101-74-01-00002.txt","0000685",""] => ["0101-0074-0001-0002-0685_101-74-01-00002.txt_0000685_","","","0101-0074-0001-0002-0685","101-74-01-00002.txt","0000685","",""]
+    [101-01-01-00002.txt_00518] => Array
+        (
+            [0] => 農田水利會經費之保管、運用、財產處分及其他財務處理之辦法，由主管機關定之。
+            [1] => 主席：請問院會，對第三十四條有無異議？（有）既有異議，交付表決。
+            [2] => 現在進行表決。贊成第三十四條照審查條文通過者請按「贊成」，反對者請按「反對」，棄權者請按「棄權」，計時1分鐘
+，現在進行記名表決。
+        )
 
-means "院會" appears at row 686 (0 as row 1) in the file "101-74-01-00002.txt".
+means "院會" appears at row 519 (0 as row 1) in the file "101-01-01-00002.txt".
 
 13. cd doc-gen. ./do_dynamic_all.sh to gen sdk docs by doxygen
-
 

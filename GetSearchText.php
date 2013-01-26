@@ -49,8 +49,8 @@ function GetSearchTextProcessColStart($start_id) {
   $line_no = $start_id_ary[1];
 
   $filename_st = split("-", $filename);
-  $score = sprintf("%04d-%04d-%04d-%04d-%04d", $filename_st[0], $filename_st[1], $filename_st[2], $filename_st[3], $line_no);
-  
+  $format = $GLOBALS["DIGIT_FORMAT"] . "-" . $GLOBALS["DIGIT_FORMAT"] . "-" . $GLOBALS["DIGIT_FORMAT"] . "-" . $GLOBALS["DIGIT_FORMAT"] . "-" . $GLOBALS["DIGIT_FORMAT"];
+  $score = sprintf($format, $filename_st[0], $filename_st[1], $filename_st[2], $filename_st[3], $line_no);
 
   $result = "[\"" . $score . "\",\"" . $filename . ".txt\",\"" . $line_no . "\",\"\"]";
 
@@ -92,10 +92,10 @@ echo "count: " . $data['result'] . "\n";
 
 $n_data = $is_all_data ? $data['result'] : LENGTH_GET_DATA;
 
-Debug("INFO", __LINE__ . $DEBUG_FILENAME, "", "to GetSearchText: key_id: $key_id n_data: $n_data col_start: $col_start");
+//Debug("INFO", __LINE__ . $DEBUG_FILENAME, "", "to GetSearchText: key_id: $key_id n_data: $n_data col_start: $col_start");
 $data = GetSearchText($null_ary, $key_id, null, true, $n_data, $col_start);
-Debug("INFO-RESULT", __LINE__ . $DEBUG_FILENAME, "data", $data);
-EchoDebug(true);
+//Debug("INFO-RESULT", __LINE__ . $DEBUG_FILENAME, "data", $data);
+EchoDebug(true, false);
 
 GetSearchTextProcessData($data, $data_dir);
 

@@ -11,12 +11,12 @@ set_include_path(get_include_path() . PATH_SEPARATOR .
 ?>
 <?php if($NoSQL['DEBUG']) include_once('Common/DebugArray.php'); ?>
 <?php if($NoSQL['DEBUG']) include_once('Common/EchoDebug.php'); ?>
-<?php include_once('Text/ImportTextToTextBasic.php'); ?>
+<?php include_once('Text/ImportTextBySpeakerToTextBasic.php'); ?>
 <?php include_once('Common/WriteFile.php'); ?>
 <?php ?>
 <?php
 /**********
- * ImportTextToTextBasicUI
+ * ImportTextBySpeakerToTextBasicUI
  * @memo (對於這個 function 的描述)
  *       (這個 function 做了哪些步驟)
  *
@@ -30,11 +30,11 @@ set_include_path(get_include_path() . PATH_SEPARATOR .
 $argc = count($argv);
 
 if($argc != 3) {
-  echo "usage: php ImportTextToTextBasicUI.php [filename] [prefix]\n";
+  echo "usage: php ImportTextBySpeakerToTextBasicUI.php [filename] [prefix]\n";
   exit;
 }
 
-ImportTextToTextBasic($argv);
+ImportTextBySpeakerToTextBasic($argv);
 
 EchoDebug();
 

@@ -78,9 +78,9 @@ function GetSearchRelated(&$params, $key_id, $column_names = null, $is_reverse =
   /**********
    * 執行 cassandra 裡的 functions.
    */
-  Debug("INFO", __LINE__ . $DEBUG_FILENAME, "to GetData: key_id: $key_id column_names", $column_names);
+  //Debug("INFO", __LINE__ . $DEBUG_FILENAME, "to GetData: key_id: $key_id column_names", $column_names);
   $data = GetData($cf_search_related, $key_id, $column_names, $is_reverse, $max_length, $col_start, $col_end);
-  Debug("INFO", __LINE__ . $DEBUG_FILENAME, "after GetData: data", $data);
+  //Debug("INFO", __LINE__ . $DEBUG_FILENAME, "after GetData: data", $data);
   if($data === null) {
     //$result['error'] = ErrorCode('SEARCH_RELATED', $function_name, 'GET');
     //return $result;

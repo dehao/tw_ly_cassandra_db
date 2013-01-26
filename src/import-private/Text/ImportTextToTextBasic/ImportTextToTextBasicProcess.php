@@ -70,9 +70,4 @@ function ImportTextToTextBasicProcess(&$params) {
   return 0;
 }
 
-function ImportTextToTextBasicProcessTextAry($text) {
-  $text_ary = preg_split("/\n/smu", $text); 
-  return $text_ary;
-}
-
 ?>

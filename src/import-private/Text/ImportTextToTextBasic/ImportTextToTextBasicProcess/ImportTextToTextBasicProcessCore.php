@@ -37,4 +37,11 @@ function ImportTextToTextBasicProcessCompileRows($cf_name_in_file, $params, &$ro
   if(!isset($rows[$key])) $rows[$key] = array();
   $rows[$key][$column_name] = $column_value;
 }
+
+function ImportTextToTextBasicProcessTextAry($text) {
+  $text_ary = preg_split("/\n/smu", $text); 
+  return $text_ary;
+}
+
+
 ?>
