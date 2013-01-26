@@ -18,6 +18,7 @@ $NoSQL['ERROR_CF2'] =                                       180000;
 $NoSQL['ERROR_REMOVE'] =                                    190000;
 $NoSQL['ERROR_MULTISET'] =                                  200000;
 $NoSQL['ERROR_SET'] =                                       210000;
+$NoSQL['ERROR_AVAILABLE'] =                                 220000;
 
 $NoSQL["ERROR_API1_SUB_FUNCTION_OFFSET"] =                  300000;
 $NoSQL['ERROR_API1_CHECK_PARAMS'] =                         300000;

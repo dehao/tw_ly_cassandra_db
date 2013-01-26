@@ -56,8 +56,8 @@ function GetSearchIndexMultiGetCount($data_result_keys) {
   foreach($data_result_keys_block as $each_block) {
     $null_ary = array('getter_id' => 0);
     $each_data_count = MultiGetCountSearchText($null_ary, $each_block);
-    Debug("WARNING", __LINE__ . $DEBUG_FILENAME, "each_data_count", $each_data_count);
-    EchoDebug(true, false);
+    //Debug("WARNING", __LINE__ . $DEBUG_FILENAME, "each_data_count", $each_data_count);
+    //EchoDebug(true, false);
     $result += $each_data_count['result'];
 
     usleep($GLOBALS["GET_SEARCH_INDEX_USLEEP"]);
@@ -81,10 +81,11 @@ $key_id = SerializeKeySearchIndex($params_search_text);
 
 $null_ary = array('getter_id' => 0);
 
-Debug("INFO", __LINE__ . $DEBUG_FILENAME, "to GetSearchIndex: key_id", $key_id);
+//Debug("INFO", __LINE__ . $DEBUG_FILENAME, "to GetSearchIndex: key_id", $key_id);
 
 $data = GetCountSearchIndex($null_ary, $key_id);
-Debug("INFO-RESULT-COUNT", __LINE__ . $DEBUG_FILENAME, "data", $data);
+//Debug("INFO-RESULT-COUNT", __LINE__ . $DEBUG_FILENAME, "data", $data);
+echo "count: " . $data['result'] . "\n";
 
 $n_data = $data['result'];
 
@@ -97,6 +98,7 @@ $data_result_keys = GetSearchIndexKeys($data_result, $prefix);
 
 $data_count = GetSearchIndexMultiGetCount($data_result_keys);
 
-Debug("INFO-RESULT", __LINE__ . $DEBUG_FILENAME, "data_count", $data_count);
-EchoDebug(true, false);
+//Debug("INFO-RESULT", __LINE__ . $DEBUG_FILENAME, "data_count", $data_count);
+//EchoDebug(true, false);
+print_r($data_count);
 ?>
