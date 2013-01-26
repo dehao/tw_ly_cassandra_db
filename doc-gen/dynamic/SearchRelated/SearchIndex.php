@@ -15,8 +15,6 @@
 ///
 /// @param [column_name] sub_string                                   <ul><li>type: string</li><li>[中文(傳統)] sub string</li></ul>
 ///
-/// @param [column_value] column_name_id_format                       <ul><li>type: string</li><li>require: false</li><li>[中文(傳統)] column_name_id 給 browser/client 端的 format</li></ul>
-/// @param [column_value] the_timestamp                               <ul><li>type: string</li><li>[中文(傳統)] 加入這個 list 的時間</li></ul>
 /// @param [column_value] sub_string                                  <ul><li>type: string</li><li>[中文(傳統)] sub string</li></ul>
 /// @param [column_value] info                                        <ul><li>type: json_array</li><li>[中文(傳統)] 其他以 json_array 形式表示的資訊</li></ul>
 ///

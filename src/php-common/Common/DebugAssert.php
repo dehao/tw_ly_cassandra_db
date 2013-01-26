@@ -10,6 +10,7 @@ function DebugAssert($script, $line, $code) {
   $DEBUG_FILENAME = "src/php-common/Common/DebugAssert";
   
   Debug("ERROR", $script, "ASSERT: line: $line code", $code);
+  EchoDebug(true, false);
   return;
 }
 ?>

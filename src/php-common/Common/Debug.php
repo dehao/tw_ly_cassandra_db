@@ -24,10 +24,6 @@ function Debug($info, $debug_filename, $prompt, $var = null, $is_echo_debug = fa
   $debug_filename = preg_replace($pattern_nosqlroot_dir, "", $debug_filename); 
   $debug_filename = preg_replace("/\..*?@/u", "@", $debug_filename); 
 
-  if(preg_match("/GetUserFriendByTheTimestamp/u", $debug_filename)) return;
-  if(preg_match("/GetUserFriendByName/u", $debug_filename)) return;
-  if(preg_match("/UserFriendRecommendedByUserId/u", $debug_filename)) return;
-
   if(!$NoSQL['DEBUG'] && preg_match("/^INFO/u", $info) && !preg_match("/^INFO-TIME/u", $info)) {
     return;
   }
@@ -52,7 +48,7 @@ function Debug($info, $debug_filename, $prompt, $var = null, $is_echo_debug = fa
    * 2. 
    */
   //if(preg_match("/^ERROR/", $info))
-  if($info == "ERROR")
+  if($info == "ERROR" || $info == "ERROR-MULTI_SET_DATA")
     Debug("DEBUG-BACKTRACE", $DEBUG_FILENAME, "", debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, $debug_backtrace_stack), false, null, true);
 
   //error_log($NoSQL['_debug']);

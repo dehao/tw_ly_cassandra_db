@@ -26,18 +26,20 @@ function MultiSetData($cf, &$rows, $ttl = null) {
 
   //Debug("INFO", $DEBUG_FILENAME, "MultiSetData: ttl", $ttl);
 
+/*
   $to_remove = array();
   foreach($rows as $each_key => &$each_val) {
     if(empty($each_val)) $to_remove[] = $each_key;
     else if($each_key === "" || $each_key === null) $to_remove[] = $each_key;
   }
   foreach($to_remove as $each_to_remove) unset($rows[$each_to_remove]);
+*/
 
   if(empty($rows)) return 0;
 
   //Debug("DEBUG-BACKTRACE", $DEBUG_FILENAME, "", debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT));
 
-  Debug("WARNING_MULTI_SET_DATA", __LINE__ . $DEBUG_FILENAME, "cf: " . $cf->column_family . " rows", $rows);
+  //Debug("WARNING_MULTI_SET_DATA", __LINE__ . $DEBUG_FILENAME, "cf: " . $cf->column_family . " rows", $rows);
 
   $the_times_retry = $NoSQL["CASSANDRA_SET_TIMES_RETRY"];
   $result_data_core = 2;

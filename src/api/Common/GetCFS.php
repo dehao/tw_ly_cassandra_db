@@ -68,7 +68,7 @@ function GetCFS($cf_name, &$params) {
   
   $debug_end_time = GetTimestamp();
   $debug_diff = $debug_end_time - $debug_start_time;
-  Debug("INFO-TIME", $DEBUG_FILENAME, "cf_name: $cf_name start_time: $debug_start_time end_time: $debug_end_time diff: $debug_diff DEBUG_CF_COUNT", $NoSQL["DEBUG_CF_COUNT"]);
+  //Debug("INFO-TIME", $DEBUG_FILENAME, "cf_name: $cf_name start_time: $debug_start_time end_time: $debug_end_time diff: $debug_diff DEBUG_CF_COUNT", $NoSQL["DEBUG_CF_COUNT"]);
 
   if(!isset($NoSQL['CASSANDRA_CFS'][$cf_name])) $NoSQL['CASSANDRA_CFS'][$cf_name] = null;
   return $NoSQL['CASSANDRA_CFS'][$cf_name];

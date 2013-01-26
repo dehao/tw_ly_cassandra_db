@@ -1,38 +1,14 @@
 <?php include_once('Common/PhpCommonConstants.php'); ?>
-<?php if($NoSQL['DEBUG']) include_once('Common/DebugArray.php'); ?>
-<?php if($NoSQL['DEBUG']) include_once('Common/EchoDebug.php'); ?>
+<?php include_once('SearchRelated/SearchRelatedIndex/ColumnNameAllColumnsSearchRelatedIndex.php'); ?>
 <?php ?>
 <?php
-/**********
- * # MEMO
- * (api-1 only) 把 params (column_name_id) unserialize 成 column_name 的 structure. (params 是 column_name_id 的 string)
- *       
- * # DO
- * 1. 如果只有一個的話. 直接設定傳回.
- * 2. 如果有很多個的話. 
- * 2.1. JsonDecode (把 bracket 變成真的 bracket, 然後做 json_decode)
- * 2.2. assert null
- * 2.3. 設定 structure (對於每個欄位做 DeformatJsonString)
- */
 
-function UnserializeColumnNameSearchRelatedIndex(&$params) {
-  global $NoSQL;
+function UnserializeColumnNameSearchRelatedIndex(&$str) {
   $DEBUG_FILENAME = "#" . __FILE__ . "@" . __FUNCTION__;
-  /**********
-   * 1.
-   */
-    $str['sub_string'] = $params;
-;
-    
-  /**********
-   * 2. 
-   */
 
-  /**********
-   * return
-   */
+  $columns = ColumnNameAllColumnsSearchRelatedIndex();
+  $result = JsonDecode($str, $columns);
 
-  Debug("INFO-END", __LINE__ . $DEBUG_FILENAME, "str", $str);
-  return $str;
+  return $result;
 }
 ?>

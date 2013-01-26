@@ -27,7 +27,7 @@ function SetData($cf, $key, &$cols, $ttl = null) {
 
   if($key === "" || $key === null) return 1;
 
-  Debug("WARNING_SET_DATA", __LINE__ . $DEBUG_FILENAME, "cf: " . $cf->column_family . " key: $key cols", $cols);
+  //Debug("WARNING_SET_DATA", __LINE__ . $DEBUG_FILENAME, "cf: " . $cf->column_family . " key: $key cols", $cols);
 
   $the_times_retry = $NoSQL["CASSANDRA_SET_TIMES_RETRY"];
   $result_data_core = 2;

@@ -2,10 +2,9 @@
 <?php ?>
 <?php
 
-function ColumnNameAllColumnsSearchIndex() {
+function KeyAllColumnsSearchText() {
   $DEBUG_FILENAME = "#" . __FILE__ . "@" . __FUNCTION__;
-
-  $str = array("sub_string");
+  $str = array("prefix", "sub_string");
 ;
     
   return $str;

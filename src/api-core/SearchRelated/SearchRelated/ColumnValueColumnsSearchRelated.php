@@ -16,7 +16,7 @@ function ColumnValueColumnsSearchRelated() {
   /**********
    * 1.
    */
-  $columns = array("context");
+  $columns = array();
 ;
   $str =& $columns;
     

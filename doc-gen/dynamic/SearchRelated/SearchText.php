@@ -21,9 +21,6 @@
 /// @param [column_name] the_row                                      <ul><li>type: string</li><li>[中文(傳統)] 相對應的 row</li></ul>
 /// @param [column_name] the_col                                      <ul><li>type: string</li><li>[中文(傳統)] 相對應的 col</li></ul>
 ///
-/// @param [column_value] column_name_id_format                       <ul><li>type: string</li><li>require: false</li><li>[中文(傳統)] column_name_id 給 browser/client 端的 format</li></ul>
-/// @param [column_value] the_timestamp                               <ul><li>type: string</li><li>[中文(傳統)] 加入這個 list 的時間</li></ul>
-/// @param [column_value] context                                     <ul><li>type: string</li><li>[中文(傳統)] context</li></ul>
 /// @param [column_value] score                                       <ul><li>type: string</li><li>[中文(傳統)] score</li></ul>
 /// @param [column_value] text_id                                     <ul><li>type: key</li><li>[中文(傳統)] 相對應的 text id</li></ul>
 /// @param [column_value] the_row                                     <ul><li>type: string</li><li>[中文(傳統)] 相對應的 row</li></ul>
